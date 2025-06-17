@@ -21,15 +21,10 @@ int main(void)
 		if (n != 9)
 		{
 			putchar(',');
+			putchar(' ');
 		}
 	}
-/**
- *  Add space between each number using putchar('')
- */
-	putchar(' ');
-
 	putchar('\n');
-
 	return (0);
 }
 
