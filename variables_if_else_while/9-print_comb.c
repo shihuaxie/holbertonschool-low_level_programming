@@ -23,6 +23,11 @@ int main(void)
 			putchar(',');
 		}
 	}
+/**
+ *  Add space between each number using putchar('')
+ */
+	putchar(' ');
+
 	putchar('\n');
 
 	return (0);
