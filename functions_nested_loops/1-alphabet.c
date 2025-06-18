@@ -1,13 +1,11 @@
 #include "main.h"
 
+void print_alphabet(void);
+
 /**
- * main - Entry point
- * 
- * Print out lowercase alphabet 10 times
- * 
- * Using _putchar twice only
+ * function_name - short description of what it does
  *
- * Return: Always 0 (Success)
+ * Return: what it returns (or 'void' if nothing)
  */
 
 void print_alphabet(void)
