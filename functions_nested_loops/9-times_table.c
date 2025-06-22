@@ -21,6 +21,12 @@ void times_table(void)
 				_putchar(',');
 				_putchar(' ');
 			}
+			if (result < 10 && column != 0)
+			{
+			/** empty space to align the number */
+				_putchar(' ');
+			}
+
 			if (result < 10)
 			{
 				_putchar(result + 48);
