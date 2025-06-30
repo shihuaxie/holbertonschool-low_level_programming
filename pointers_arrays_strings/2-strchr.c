@@ -22,5 +22,11 @@ char *_strchr(char *s, char c)
 		}
 		i++;
 	}
+	/** Check if c is '\0' to match end of string */
+	if (c == '\0')
+	{
+		return (&s[i]);
+	}
+
 	return (NULL);
 }
