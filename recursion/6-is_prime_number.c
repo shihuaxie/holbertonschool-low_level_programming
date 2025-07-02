@@ -19,14 +19,16 @@ int is_prime_number(int n)
 	else
 	{
 		/** call the helper function starting with divisor 2. */
-		return (check_prime(n , 2));
+		return (check_prime(n, 2));
 	}
 }
 
 /**
- * check_prime - recursively checks if `n` has any divisor.
+ * check_prime - Function recursively checks if `n` has any divisor.
  * @n: the number to check
  * @divisor: the current number to try dividing n, start from 2
+ *
+ * Return: 1 if n is a prime number, 0 otherwise.
  */
 
 int check_prime(int n, int divisor)
@@ -36,7 +38,9 @@ int check_prime(int n, int divisor)
 	{
 		return (0);
 	}
-	/** If divisor squared is greater than n, and no divisor was found, it's a prime number */
+	/* If divisor squared is greater than n, */
+	/* and no divisor was found, it's a prime number */
+
 	if (divisor * divisor > 0)
 	{
 		return (1);
