@@ -8,11 +8,11 @@
  * Return: 0
  */
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int i = 0;
 
-	/* Make sure there is an argument */ 
+	/* Make sure there is an argument */
 	if (argc > 0)
 	{
 		/* Loop the string argv[0]*/
