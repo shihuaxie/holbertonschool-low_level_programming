@@ -13,7 +13,7 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *s3;
-	int size, size1 = 0,  size2 = 0;
+	int size1 = 0,  size2 = 0;
 	int i, j;
 
 	/* Treat NULL as empty string */
@@ -29,10 +29,10 @@ char *str_concat(char *s1, char *s2)
 	while (s2[size2] != '\0')
 		size2++;
 
-	size = size1 + size2;
-
 	/* Allocate memory for concatenated string (+1 for '\0') */
-	s3 = malloc(sizeof(char) * (size + 1));
+	s3 = malloc(sizeof(char) * (size1 + size2 + 1));
+	if (s3 == NULL)
+		return (NULL);
 
 	/* Copy s1 into s3 */
 	for (i = 0; s1[i] != '\0'; i++)
