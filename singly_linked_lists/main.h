@@ -1,5 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stddef.h>
+#include "lists.h"
 
 /**
  * Here is all function prototypes that will be used in the task
