@@ -14,6 +14,7 @@ list_t *add_node_end(list_t **head, const char *str)
 /* 1: create a new node - new_node */
 	list_t *new_node;
 	list_t *temp;
+	int len = 0;
 
 /* 2: malloc for new_node and strcpy str */
 	new_node = malloc(sizeof(list_t));
@@ -28,10 +29,11 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(new_node); /* if failed copy, release new_node storage*/
 		return (NULL);
 	}
-
 	/* get the length of string */
-	new_node->len = strlen(str);
+	while (str[len] != '\0')
+		len++;
 
+	new_node->len = len;
 	new_node->next = NULL;
 
 	/* the original head is NULL, set new node as head*/
