@@ -28,7 +28,13 @@ int main(int ac, char **av)
 		exit(97);
 	}
 
-	fd_from = open_file_from(av[1]);
+	fd_from = open(av[1], O_RDONLY);
+	if (fd_from == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
+
 	fd_to = open_file_to(av[2]);
 
 	copy_file_data(fd_from, fd_to, av[1], av[2]);
@@ -94,14 +100,14 @@ void copy_file_data(int fd_from, int fd_to, const char *from, const char *to)
 		w = write(fd_to, buf, r);
 		if (w == -1 || w != r)
 		{
-			dprintf(2, "Error: Can't write to %s\n", to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_file);
 			exit(99);
 		}
 	}
 
 	if (r == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_file);
 		exit(98);
 	}
 }
