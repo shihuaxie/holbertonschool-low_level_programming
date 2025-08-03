@@ -30,6 +30,7 @@ int main(int ac, char **av)
 
 	fd_from = open_file_from(av[1]);
 	fd_to = open_file_to(av[2]);
+
 	copy_file_data(fd_from, fd_to, av[1], av[2]);
 
 	safe_close(fd_from);
@@ -93,14 +94,14 @@ void copy_file_data(int fd_from, int fd_to, const char *from, const char *to)
 		w = write(fd_to, buf, r);
 		if (w == -1 || w != r)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to_file);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to);
 			exit(99);
 		}
 	}
 
 	if (r == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from_file);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
 		exit(98);
 	}
 }
